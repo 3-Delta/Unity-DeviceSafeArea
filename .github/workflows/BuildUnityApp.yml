@@ -31,12 +31,17 @@ jobs:
         id: getManualLicenseFile
         uses: game-ci/unity-request-activation-file@v2
         
-      # Upload artifact (Unity_v20XX.X.XXXX.alf)
+      # Upload artifact (Unity_v2019.XXXX.alf)
       - name: Expose as artifact
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.getManualLicenseFile.outputs.filePath }}
           path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          
+      # Return License
+      - name: Expose as artifact
+        uses: game-ci/unity-return-license@v1
+        if: always()
           
       # Cache Library
       - uses: actions/cache@v2
