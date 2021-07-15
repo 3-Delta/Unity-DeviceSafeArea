@@ -1,5 +1,5 @@
-# This is a basic workflow to help you get started with Actions
-
+# 简单示例
+# https://github.com/game-ci/unity-builder/blob/main/.github/workflows/build-tests.yml
 name: BuildUnityApp
 
 # Controls when the workflow will run
@@ -20,7 +20,14 @@ jobs:
     name: BuildUnityApp
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - Android # Build an Android .apk.
+          - WebGL # WebGL.
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out
@@ -47,10 +54,13 @@ jobs:
         # secrets.UNITY_LICENSE其实是仓库的setting下的secrets的一个key为UNITY_LICENSE的value
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          targetPlatform: Android
+          targetPlatform: ${{ matrix.targetPlatform }}
+
+      # https://github.com/game-ci/unity-builder/blob/main/.github/workflows/build-tests.yml
+      # 简单示例
 
       # Output
       - uses: actions/upload-artifact@v2
         with:
-          name: Build
+          name: UnityApp (${{ matrix.targetPlatform }})
           path: build
