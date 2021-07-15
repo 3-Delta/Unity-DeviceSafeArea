@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI-BuildUnityApp
+name: BuildUnityApp
 
 # Controls when the workflow will run
 on:
@@ -32,16 +32,16 @@ jobs:
           path: Library
           key: Library 
           
-      # Test
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v2
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      # Test 暂时屏蔽
+      #- name: Run tests
+      #  uses: game-ci/unity-test-runner@v2
+       # env:
+      #    UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+      #  with:
+       #   githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       # Build
-      - name: Build project
+      - name: Build Unity Project
         uses: game-ci/unity-builder@v2
         env:
         # secrets.UNITY_LICENSE其实是仓库的setting下的secrets的一个key为UNITY_LICENSE的value
