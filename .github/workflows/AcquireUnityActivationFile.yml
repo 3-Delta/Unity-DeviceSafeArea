@@ -1,6 +1,7 @@
 # 这里因为 on workflow_dispatch, 所以只能外面手动执行，不能pull等操作触发
 # 获取一个Unity的证书
 # https://game.ci/docs/github/activation
+# 一个简单示例： https://github.com/game-ci/unity-request-activation-file/blob/main/.github/workflows/main.yml
 
 name: AcquireUnityActivationFile
 on:
