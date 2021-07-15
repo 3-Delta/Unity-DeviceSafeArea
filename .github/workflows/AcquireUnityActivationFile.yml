@@ -2,7 +2,7 @@
 # 获取一个Unity的证书
 # https://game.ci/docs/github/activation
 
-name: CI-Manual-AcquireUnityActivationFile
+name: AcquireUnityActivationFile
 on:
   workflow_dispatch: 
 jobs:
