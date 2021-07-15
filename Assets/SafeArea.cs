@@ -47,8 +47,9 @@ namespace Crystal {
 
         private void TryApplySafeArea() {
             Rect safeArea = GetSafeArea();
-            if (safeArea != LastSafeArea)
+            if (safeArea != LastSafeArea) {
                 ApplySafeArea(safeArea, offset);
+            }
         }
 
         public void TryApplySafeArea(ref Rect safeArea) {
