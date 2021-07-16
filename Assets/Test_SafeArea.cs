@@ -7,6 +7,7 @@ using Crystal;
 
 public class Test_SafeArea : MonoBehaviour {
     public Text deviceSafeArea;
+    public Text screenRect;
 
     public InputField inputX;
     public InputField inputY;
@@ -17,6 +18,7 @@ public class Test_SafeArea : MonoBehaviour {
 
     private void Awake() {
         deviceSafeArea.text = Screen.safeArea.ToString();
+        screenRect.text = new Rect(0, 0, Screen.width, Screen.height).ToString();
     }
 
     public void OnBtnClicked() {
