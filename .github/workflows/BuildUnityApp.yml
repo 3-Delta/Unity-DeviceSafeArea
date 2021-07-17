@@ -64,3 +64,13 @@ jobs:
         with:
           name: UnityApp (${{ matrix.targetPlatform }})
           path: build
+       
+       # 通知
+      - name: Send Push Notification
+        uses: techulus/push-github-action@1.0.0
+        env:
+          API_KEY: ${{ secrets.PUSHNOTIFICATIONKEY }}
+          MESSAGE: "Notification from GitHub by cuibinbin!"
+          TITLE: 任务完成，请验收 
+          LINK: https://github.com/3-Delta/Unity-DeviceSafeArea/actions/runs/1036633338
+
