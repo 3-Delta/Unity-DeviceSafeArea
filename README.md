@@ -7,3 +7,4 @@
 平台云真机测试：
 1. https://open.oppomobile.com/cloudmachine/device/list-plus
 2. https://vcl.vivo.com.cn/#/machine/picking
+3. https://wetest.qq.com/n/console/bmg-2605/testlab/remote/devices/
