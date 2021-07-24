@@ -17,4 +17,5 @@
                                                                                                
 9. https://mtc.baidu.com/tinypace/main#/   
 10. https://www.testin.cn/realmachine/index.htm   
-11. https://wetest.qq.com/n/console/bmg-2605/testlab/remote/devices/      
+11. https://wetest.qq.com/n/console/bmg-2605/testlab/remote/devices/     
+12. https://github.com/zhangzhun132/NotchTools 
